@@ -1,0 +1,446 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+@keyframes slowMove {
+  0% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(40px) translateY(20px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+.float-heart {
+  animation: floatUp 6s linear infinite;
+}
+
+.slow-blob {
+  animation: slowMove 10s ease-in-out infinite;
+}
+
+@keyframes dotFade {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.dot-1 { animation: dotFade 1.4s infinite; }
+.dot-2 { animation: dotFade 1.4s infinite 0.2s; }
+.dot-3 { animation: dotFade 1.4s infinite 0.4s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translate(-10px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes smoothSlide {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -50%) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+.romantic-card {
+  animation: smoothSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  box-shadow:
+    0 10px 30px rgba(255, 105, 180, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.08);
+}
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0px;
+  }
+}
+
+.hero-animate {
+  animation: heroReveal 1s ease-out forwards;
+}
+
+.particle {
+  position: absolute;
+  bottom: -20px;
+  width: 6px;
+  height: 6px;
+  background: rgba(121, 119, 120, 0.144);
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Cursor blinking */
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+.neon-text {
+  color: #ff6fae !important;
+  text-shadow:
+    0 0 6px rgba(255, 111, 174, 0.5),
+    0 0 12px rgba(255, 111, 174, 0.4),
+    0 0 20px rgba(255, 111, 174, 0.25);
+  animation: softNeon 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes softNeon {
+  from {
+    text-shadow:
+      0 0 4px rgba(255, 111, 174, 0.3),
+      0 0 8px rgba(255, 111, 174, 0.2);
+  }
+
+  to {
+    text-shadow:
+      0 0 10px rgba(255, 111, 174, 0.6),
+      0 0 18px rgba(255, 111, 174, 0.35);
+  }
+}
+
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.15;
+  }
+}
+
+.typewriter {
+  color: #6b6565; /* soft romantic red */
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ff6fae;
+  width: 0;
+  animation:
+    typing 4s steps(38) infinite,
+    blinkCursor 0.8s step-end infinite;
+}
+
+/* Love Scene Container */
+.love-scene {
+  position: fixed;
+  right: 120px;
+  bottom: 140px; /* ABOVE footer */
+  width: 200px;
+  height: 120px;
+  z-index: 30;
+}
+
+/* Arrow Loop */
+.arrow {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  font-size: 28px;
+  animation: shootArrow 2.5s ease infinite;
+}
+
+@keyframes shootArrow {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(110px); }
+  50% { transform: translateX(110px); }
+  100% { transform: translateX(0); }
+}
+
+/* Heart */
+.heart-target {
+  position: absolute;
+  left: 110px;
+  bottom: 40px;
+  font-size: 38px;
+  animation: heartPop 2.5s ease infinite;
+}
+
+@keyframes heartPop {
+  0%, 35%, 100% { transform: scale(1); }
+  45% { transform: scale(1.3); }
+  55% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1); opacity: 1; }
+}
+
+/* Mini Falling Hearts */
+.mini-heart {
+  position: absolute;
+  left: 110px;
+  bottom: 40px;
+  font-size: 18px;
+  animation: fallHearts 2.5s ease infinite;
+  opacity: 0;
+}
+
+.heart-1 { animation-delay: 0.5s; left: 100px; }
+.heart-2 { animation-delay: 0.6s; left: 110px; }
+.heart-3 { animation-delay: 0.7s; left: 120px; }
+.heart-4 { animation-delay: 0.8s; left: 95px; }
+.heart-5 { animation-delay: 0.9s; left: 130px; }
+
+@keyframes fallHearts {
+  0% { transform: translateY(0); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: translateY(100px); opacity: 0; }
+}
+
+/* Better Positioned Next Button */
+.next-button {
+  position: right;
+  left: 60px;   /* Move right */
+  bottom: -10px;
+  padding: 10px 28px;
+  background: linear-gradient(135deg, #ff4da6, #ff80bf);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  transition: all 0.3s ease;
+}
+
+.next-button:hover {
+  transform: scale(1.08);
+}
+
+
+@keyframes fadeNext {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* second page animations */
+/*page fadein effect 1 */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInPage {
+  animation: fadeInPage 0.6s ease forwards;
+}
+/*screenshake animation*/
+@keyframes screenShake {
+  0% { transform: translate(0px, 0px); }
+  20% { transform: translate(-8px, 5px); }
+  40% { transform: translate(8px, -5px); }
+  60% { transform: translate(-6px, 4px); }
+  80% { transform: translate(6px, -4px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+.shake-screen {
+  animation: screenShake 0.4s ease;
+}
+
+/* Background Pulse */
+@keyframes bgPulse {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+  100% { filter: brightness(1); }
+}
+.animate-bgPulse {
+  animation: bgPulse 6s ease-in-out infinite;
+}
+
+/* Floating Particles */
+.particle-romantic {
+  position: absolute;
+  bottom: -20px;
+  width: 10px;   /* bigger */
+  height: 10px;
+  background: radial-gradient(circle, #ff4da6 0%, #ff99cc 60%, transparent 80%);
+  border-radius: 50%;
+  opacity: 0.8;  /* stronger */
+  filter: blur(1px);
+  animation: floatUpRomantic linear infinite;
+}
+
+@keyframes floatUpRomantic {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* YES Glow */
+.romantic-yes {
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+  animation: yesGlow 2s ease-in-out infinite alternate;
+}
+@keyframes yesGlow {
+  0% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
+  100% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.8); }
+}
+
+/* Screen Shake */
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(-5px, 5px); }
+  100% { transform: translate(0); }
+}
+.shake-screen {
+  animation: shake 0.4s;
+}
+
+/* Fade In */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInPage {
+  animation: fadeInPage 0.5s ease forwards;
+}
+
+/* Heart Burst */
+.heart-burst {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.burst-heart {
+  position: absolute;
+  font-size: 24px;
+  animation: explode 1s ease-out forwards;
+}
+@keyframes explode {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% {
+    transform: translate(
+      calc(-150px + 300px * var(--random-x)),
+      calc(-150px + 300px * var(--random-y))
+    ) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes bgPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.animate-bgPulse {
+  animation: bgPulse 8s ease-in-out infinite;
+}
+
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInPage {
+  animation: fadeInPage 0.8s ease forwards;
+}

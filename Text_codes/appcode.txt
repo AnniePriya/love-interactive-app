@@ -1,0 +1,15 @@
+// App.jsx code
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import SecondPage from "./SecondPage";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/next" element={<SecondPage />} />
+    </Routes>
+  );
+}
+
+export default App;

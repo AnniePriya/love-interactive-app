@@ -1,0 +1,11 @@
+frontend//
+cd pro-jcr
+npm run dev
+
+backend//
+cd pro-jcr
+npm run dev
+
+main folder //
+cd ..
+

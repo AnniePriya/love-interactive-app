@@ -1,0 +1,4 @@
+us: loveUser
+pw : dY4K2uKDW7MVadMx
+
+mongodb+srv://<db_username>:<db_password>@gammacluster.fssjfjc.mongodb.net/?appName=GammaCluster

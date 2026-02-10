@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+@keyframes slowMove {
+  0% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(40px) translateY(20px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+.float-heart {
+  animation: floatUp 6s linear infinite;
+}
+
+.slow-blob {
+  animation: slowMove 10s ease-in-out infinite;
+}
+
+@keyframes dotFade {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.dot-1 { animation: dotFade 1.4s infinite; }
+.dot-2 { animation: dotFade 1.4s infinite 0.2s; }
+.dot-3 { animation: dotFade 1.4s infinite 0.4s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translate(-10px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes smoothSlide {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -50%) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+.romantic-card {
+  animation: smoothSlide 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  box-shadow:
+    0 10px 30px rgba(255, 105, 180, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.08);
+}
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0px;
+  }
+}
+
+.hero-animate {
+  animation: heroReveal 1s ease-out forwards;
+}
+
+.particle {
+  position: absolute;
+  bottom: -20px;
+  width: 6px;
+  height: 6px;
+  background: rgba(121, 119, 120, 0.144);
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Cursor blinking */
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+.neon-text {
+  color: #ff6fae !important;
+  text-shadow:
+    0 0 6px rgba(255, 111, 174, 0.5),
+    0 0 12px rgba(255, 111, 174, 0.4),
+    0 0 20px rgba(255, 111, 174, 0.25);
+  animation: softNeon 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes softNeon {
+  from {
+    text-shadow:
+      0 0 4px rgba(255, 111, 174, 0.3),
+      0 0 8px rgba(255, 111, 174, 0.2);
+  }
+
+  to {
+    text-shadow:
+      0 0 10px rgba(255, 111, 174, 0.6),
+      0 0 18px rgba(255, 111, 174, 0.35);
+  }
+}
+
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.15;
+  }
+}
+
+.typewriter {
+  color: #6b6565; /* soft romantic red */
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ff6fae;
+  width: 0;
+  animation:
+    typing 4s steps(38) infinite,
+    blinkCursor 0.8s step-end infinite;
+}
+
+/* Arrow flies toward heart */
+.arrow {
+  position: absolute;
+  left: -120px;
+  top: 30px;
+  font-size: 26px;
+  animation: flyArrow 1.8s ease-out forwards;
+}
+
+@keyframes flyArrow {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 40px;
+  }
+}
+
+/* Heart */
+.heart-target {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  font-size: 40px;
+  transition: all 0.4s ease;
+}
+
+.heart-hit {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 12px rgba(255, 0, 128, 0.5));
+}
+
+/* Next button */
+.next-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff6fae, #ff4d94);
+  color: white;
+  padding: 10px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(255, 111, 174, 0.3);
+  animation: fadeNext 0.5s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover {
+  transform: scale(1.08);
+}
+
+@keyframes fadeNext {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
