@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 
 import {
@@ -19,6 +21,8 @@ import {
 function Layout() {
   const [activeMemory, setActiveMemory] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   const memories = [
     { id: 1, icon: Heart, type: "image", src: "/images/one.jpeg", text: "Where it all began." },
@@ -113,10 +117,14 @@ function Layout() {
             <span className="text-xl font-semibold">Games</span>
           </div>
 
-          <div className="flex items-center gap-4 cursor-pointer hover:scale-110 transition">
-            <Image size={28} />
-            <span className="text-xl font-semibold">Gallery</span>
-          </div>
+          <div
+  onClick={() => navigate("/home/gallery")}
+  className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+>
+  <Image size={28} />
+  <span className="text-xl font-semibold">Gallery</span>
+</div>
+
         </div>
       </div>
 

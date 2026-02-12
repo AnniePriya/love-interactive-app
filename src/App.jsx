@@ -4,6 +4,8 @@ import Home from "./Home";
 import SecondPage from "./SecondPage";
 import Loading from "./Loading";
 import Login from "./Login";
+import Gallery from "./Gallery";
+
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
       <Route path="/home" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="next" element={<SecondPage />} />
+
+        <Route path="/home/gallery" element={<Gallery />} />
+
       </Route>
 
     </Routes>
