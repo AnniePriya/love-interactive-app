@@ -49,4 +49,19 @@ app.get("/api/test", (req, res) => {
 
 app.listen(5000, () => {
   console.log("🚀 Server running on port 5000");
+
+  app.post("/api/save-love-note", async (req, res) => {
+  const { username, message } = req.body;
+
+  const newEntry = new Answer({
+    username,
+    round: 0,
+    clickAnswers: [],
+    textAnswers: [message]
+  });
+
+  await newEntry.save();
+  res.json({ success: true });
+});
+
 });

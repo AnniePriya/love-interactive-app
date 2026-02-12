@@ -5,6 +5,8 @@ import SecondPage from "./SecondPage";
 import Loading from "./Loading";
 import Login from "./Login";
 import Gallery from "./Gallery";
+import LoveNote from "./LoveNote";
+
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="next" element={<SecondPage />} />
 
         <Route path="/home/gallery" element={<Gallery />} />
+        <Route path="love-note" element={<LoveNote />} />
+
 
       </Route>
 

@@ -125,6 +125,15 @@ function Layout() {
   <span className="text-xl font-semibold">Gallery</span>
 </div>
 
+<div
+  onClick={() => navigate("/home/love-note")}
+  className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+>
+  💌
+  <span className="text-xl font-semibold">Love Note</span>
+</div>
+
+
         </div>
       </div>
 
