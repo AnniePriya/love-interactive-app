@@ -35,7 +35,7 @@ export default function RatingGame() {
     } else {
       // 🔥 SAVE TO DATABASE
       try {
-        await axios.post("http://localhost:5000/api/save", {
+        await axios.post("https://love-app-backend.onrender.com/api/save", {
           username: "jerosh",
           round: "ratingGame",
           clickAnswers: updatedRatings.map(String), // convert to string

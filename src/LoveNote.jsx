@@ -9,7 +9,7 @@ function LoveNote() {
     if (!reply.trim()) return;
 
     try {
-      await axios.post("http://localhost:5000/api/save-love-note", {
+      await axios.post("https://love-app-backend.onrender.com/api/save-love-note", {
         username: "jerosh",
         message: reply
       });

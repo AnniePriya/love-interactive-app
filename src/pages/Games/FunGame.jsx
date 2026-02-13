@@ -73,7 +73,7 @@ function FunGame() {
 
   const saveScore = async () => {
     try {
-      await axios.post("http://localhost:5000/api/save", {
+      await axios.post("https://love-app-backend.onrender.com/api/save", {
         username: "jerosh",
         round: 3,
         clickAnswers: [],

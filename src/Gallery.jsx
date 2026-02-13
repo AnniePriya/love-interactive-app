@@ -12,7 +12,7 @@ function Gallery() {
     },
     {
       title: "This is def the change🌸",
-      date: "ne ollti vita, na viluthuten😂 ",
+      date: "ne uuvvtti vita, na viluthuten😂 ",
       type: "video",
       src: "/videos/2v.mp4",
       text: "Birthday gift eh ne than😂 ."
