@@ -6,6 +6,7 @@ export default function ChoiceGame() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [finished, setFinished] = useState(false);
   const [allChoices, setAllChoices] = useState([]); // ✅ store answers
+  
 
   const questions = [
     {
@@ -51,7 +52,7 @@ export default function ChoiceGame() {
         clickAnswers: choices,
         textAnswers: []
       });
-
+console.log("API URL:", import.meta.env.VITE_API_URL);
       console.log("💗 Choice Game saved successfully");
     } catch (err) {
       console.log("❌ Error saving:", err);
