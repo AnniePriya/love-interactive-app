@@ -45,13 +45,14 @@ export default function ChoiceGame() {
   const saveToDatabase = async (choices) => {
     try {
      await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/save`,
-      {
-        username: "jerosh",
-        round: "choiceGame",
-        clickAnswers: choices,
-        textAnswers: []
-      });
+  "https://love-interactive-app.onrender.com/api/save",
+  {
+    username: "jerosh",
+    round: "choiceGame",
+    clickAnswers: choices,
+    textAnswers: []
+  }
+);
 console.log("API URL:", import.meta.env.VITE_API_URL);
       console.log("💗 Choice Game saved successfully");
     } catch (err) {
