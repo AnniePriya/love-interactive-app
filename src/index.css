@@ -475,3 +475,77 @@
     opacity: 0;
   }
 }
+/* choicegame */
+/* Choice Box Styling */
+.choice-box {
+  width: 100%;
+  background: #1f1f1f;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.choice-box:hover {
+  transform: scale(1.05);
+  background: #2a2a2a;
+}
+
+.choice-box.selected {
+  background: #ec4899;
+  transform: scale(1.05);
+}
+
+/* A / B label */
+.choice-label {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* OR Circle */
+.or-circle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  border: 2px solid #444;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+/* rating game */
+
+/* Smooth slider track */
+.rating-slider {
+  height: 8px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f472b6, #ec4899);
+  outline: none;
+}
+
+/* Slider Thumb (Heart Style) */
+.rating-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  background: #ec4899;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ec4899;
+  transition: transform 0.2s ease;
+}
+
+.rating-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}

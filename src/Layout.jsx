@@ -92,50 +92,84 @@ function Layout() {
   </div>
 )}
 
-      {/* Hamburger */}
-      <div className="fixed top-6 right-8 z-40">
-        <button onClick={() => setMenuOpen(true)}>
-          <Menu size={30} className="text-pink-500" />
-        </button>
-      </div>
-
-      {/* Slide Panel */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white/90 backdrop-blur-xl shadow-2xl border-l border-pink-200 z-50 transform transition-transform duration-500 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex justify-end p-6">
-          <button onClick={() => setMenuOpen(false)}>
-            <X size={26} className="text-pink-500" />
-          </button>
-        </div>
-
-        <div className="flex flex-col items-center gap-10 mt-16 text-pink-600">
-          <div className="flex items-center gap-4 cursor-pointer hover:scale-110 transition">
-            <Gamepad2 size={28} />
-            <span className="text-xl font-semibold">Games</span>
-          </div>
-
-          <div
-  onClick={() => navigate("/home/gallery")}
-  className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
->
-  <Image size={28} />
-  <span className="text-xl font-semibold">Gallery</span>
+     {/* Hamburger */}
+<div className="fixed top-6 right-8 z-40">
+  <button
+    onClick={() => setMenuOpen(true)}
+    className="hover:scale-110 transition"
+  >
+    <Menu size={30} className="text-pink-500" />
+  </button>
 </div>
 
+{/* Slide Panel */}
 <div
-  onClick={() => navigate("/home/love-note")}
-  className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+  className={`fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl border-l border-pink-200 z-50 transform transition-transform duration-500 ${
+    menuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
 >
-  💌
-  <span className="text-xl font-semibold">Love Note</span>
+
+  {/* Close Button */}
+  <div className="flex justify-end p-6">
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="hover:scale-110 transition"
+    >
+      <X size={26} className="text-pink-500" />
+    </button>
+  </div>
+
+  {/* Menu Items */}
+  <div className="flex flex-col items-center gap-12 mt-12 text-pink-600">
+
+    {/* Games */}
+    <div
+      onClick={() => {
+        navigate("/home/games");
+        setMenuOpen(false);
+      }}
+      className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+    >
+      <Gamepad2 size={28} />
+      <span className="text-xl font-semibold">Games</span>
+    </div>
+
+    {/* Gallery */}
+    <div
+      onClick={() => {
+        navigate("/home/gallery");
+        setMenuOpen(false);
+      }}
+      className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+    >
+      <Image size={28} />
+      <span className="text-xl font-semibold">Gallery</span>
+    </div>
+
+    {/* Love Note */}
+    <div
+      onClick={() => {
+  navigate("/home/love-note");
+
+        setMenuOpen(false);
+      }}
+      className="flex items-center gap-4 cursor-pointer hover:scale-110 transition"
+    >
+      <Heart size={28} />
+      <span className="text-xl font-semibold">Love Note</span>
+    </div>
+
+  </div>
 </div>
 
+{/* Overlay */}
+{menuOpen && (
+  <div
+    onClick={() => setMenuOpen(false)}
+    className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+  />
+)}
 
-        </div>
-      </div>
 
       {/* Overlay */}
       {menuOpen && (

@@ -1,11 +1,26 @@
-
 const mongoose = require("mongoose");
 
 const answerSchema = new mongoose.Schema({
-  username: String,
-  round: Number,
-  clickAnswers: [String],
-  textAnswers: [String],
+  username: {
+    type: String,
+    required: true
+  },
+
+  round: {
+    type: String,   // 🔥 CHANGED FROM Number TO String
+    required: true
+  },
+
+  clickAnswers: {
+    type: [String],
+    default: []
+  },
+
+  textAnswers: {
+    type: [String],
+    default: []
+  },
+
   createdAt: {
     type: Date,
     default: Date.now

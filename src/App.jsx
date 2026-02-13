@@ -6,6 +6,10 @@ import Loading from "./Loading";
 import Login from "./Login";
 import Gallery from "./Gallery";
 import LoveNote from "./LoveNote";
+import Games from "./Games";
+import ChoiceGame from "./pages/Games/ChoiceGame";
+import RatingGame from "./pages/Games/RatingGame";
+import FunGame from "./pages/Games/FunGame";
 
 
 
@@ -24,8 +28,13 @@ function App() {
         <Route index element={<Home />} />
         <Route path="next" element={<SecondPage />} />
 
-        <Route path="/home/gallery" element={<Gallery />} />
-        <Route path="love-note" element={<LoveNote />} />
+        <Route path="gallery" element={<Gallery />} />
+  <Route path="love-note" element={<LoveNote />} />
+  <Route path="games" element={<Games />} />
+  <Route path="games/choice" element={<ChoiceGame />} />
+  <Route path="games/rating" element={<RatingGame />} />
+  <Route path="games/fun" element={<FunGame />} />
+
 
 
       </Route>
