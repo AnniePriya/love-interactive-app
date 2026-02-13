@@ -15,10 +15,12 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "jeroshchris.vercel.app"
+    "https://love-interactive-jixsb6wc8-annie-priya-s-projects.vercel.app"
   ],
+  methods: ["GET", "POST"],
   credentials: true
 }));
+
 
 
 app.use(express.json());
