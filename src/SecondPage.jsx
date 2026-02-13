@@ -42,7 +42,9 @@ function SecondPage() {
     try {
       console.log("Sending to backend:", clickData, textData);
 
-      const res = await axios.post("`${import.meta.env.VITE_API_URL}/api/save`", {
+      const res = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/save`,
+      {
       username: "jerosh",
       round,
       clickAnswers: clickData,

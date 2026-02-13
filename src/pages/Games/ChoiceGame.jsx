@@ -43,7 +43,9 @@ export default function ChoiceGame() {
   // 💾 Save to MongoDB
   const saveToDatabase = async (choices) => {
     try {
-      await axios.post("`${import.meta.env.VITE_API_URL}/api/save`", {
+     await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/save`,
+      {
         username: "jerosh",
         round: "choiceGame",
         clickAnswers: choices,
