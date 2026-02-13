@@ -9,15 +9,19 @@ function LoveNote() {
     if (!reply.trim()) return;
 
     try {
-      await axios.post("https://love-app-backend.onrender.com/api/save-love-note", {
-        username: "jerosh",
-        message: reply
-      });
+      await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/save-love-note`,
+  {
+    username: "jerosh",
+    message: reply
+  }
+);
 
       setSubmitted(true);
     } catch (err) {
       console.log("Error saving love note:", err);
-    }
+  alert("Server not responding 💔");
+}
   };
 
   return (
